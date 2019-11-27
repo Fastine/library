@@ -15,8 +15,9 @@ function addBookToLibrary () {
     let author = document.getElementById("author").value;
     let pages = document.getElementById("pages").value;
     let read = document.getElementById("read").value;
-    let book = new Book(title, author, pages, read)
-    myLibrary.push(book)
+    let book = new Book(title, author, pages, read);
+    myLibrary.push(book);
+    render();
 }
 
 
@@ -30,9 +31,14 @@ function populateLibrary() {
 }
 
 function render() {
-    let card = document.createElement('div')
+    const container = document.getElementById('container');
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
     myLibrary.forEach(item => {
+        let card = document.createElement('div')
         card.className = 'card';
+        card.setAttribute('data-key', `${myLibrary.indexOf(item)}`)
         card.innerHTML = 
             `<p>Title: ${item.title}</p>
             <p>Author: ${item.author}</p>
@@ -40,6 +46,18 @@ function render() {
             <p>Read: ${item.read}</p>`
         container.append(card);
     })
+}
+
+function openForm() {
+    document.getElementById("newBookForm").style.display = "block";
+}
+  
+  function closeForm() {
+    document.getElementById("newBookForm").style.display = "none";
+}
+
+function newBook() {
+
 }
 
 populateLibrary();

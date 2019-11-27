@@ -1,0 +1,64 @@
+root {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #4f5f76;
+}
+
+h1 {
+    background-color: #0f2862;
+    color: rgba(256 ,256 ,256, 80%);
+    
+}
+
+#container {
+    display: flex;
+    
+}
+
+.card {
+    background-color: #091f36;
+    color: rgba(256 ,256 ,256, 80%);
+    /* border: 1px solid #9e363a; */
+    box-shadow: 2px 2px 8px #9e363a;
+    margin: 3px;
+    padding: 1px 5px;
+}
+
+.new-book-button {
+
+}
+
+.form-popup {
+    display: none;
+}
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+}
+
+.form-container input[type=text] {
+    width: 100%;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.form-container .btn {
+    background-color: #0f2862;
+    border: none;
+}
+
+.form-container .cancel {
+    background-color: #9e363a;
+    border: none;
+}
+
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }

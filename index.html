@@ -14,10 +14,35 @@
 
 <body>
   <h1>My Library</h1>
+
+  <button type="menu" onclick="openForm()">NEW BOOK</button>
   
+  <div class="form-popup" id="newBookForm">
+    <form class="form-container">
+      <h1>New Book</h1>
+  
+      <label for="title"><b>Title</b></label>
+      <input type="text" placeholder="Enter Title" name="title" id="title" required>
+
+      <label for="author"><b>Author</b></label>
+      <input type="text" placeholder="Enter author's name" name="author" id="author" required>
+
+      <label for="pages"><b>Pages</b></label>
+      <input type="text" placeholder="# of pages" name="pages" id="pages">
+
+      <label for="read"><b>Have you read this book?</b></label>
+      <input type="checkbox" name="read" id="read">
+
+  
+      <button type="button" class="btn" onclick="addBookToLibrary()">ADD</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+
   <div id="container">
     <!-- <div class="card"></div> -->
   </div>
+
 
 
   <script src="js/scripts.js"></script>
