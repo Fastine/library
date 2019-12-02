@@ -14,9 +14,11 @@ function addBookToLibrary () {
     let title = document.getElementById("title").value;
     let author = document.getElementById("author").value;
     let pages = document.getElementById("pages").value;
-    let read = document.getElementById("read").value;
+    let read = document.getElementById("read")
+    read.checked ? read = "true" : read = "false";
     let book = new Book(title, author, pages, read);
     myLibrary.push(book);
+
     render();
 }
 
@@ -24,8 +26,8 @@ function addBookToLibrary () {
 //Generate two books and add to library
 function populateLibrary() {
     if (myLibrary.length == 0) {
-        let book1 = new Book("Ender's Game", "Orson Scott Card", 324, true)
-        let book2 = new Book("JavaScript: The Good Parts", "Douglas Crockford", 174, false)
+        let book1 = new Book("Ender's Game", "Orson Scott Card", 324, "true")
+        let book2 = new Book("JavaScript: The Good Parts", "Douglas Crockford", 174, "false")
         myLibrary.push(book1, book2)
     }
 }
@@ -39,11 +41,24 @@ function render() {
         let card = document.createElement('div')
         card.className = 'card';
         card.setAttribute('data-key', `${myLibrary.indexOf(item)}`)
-        card.innerHTML = 
+        item.read == "true" ? 
+            card.innerHTML = 
             `<p>Title: ${item.title}</p>
             <p>Author: ${item.author}</p>
             <p>Pages: ${item.pages}</p>
-            <p>Read: ${item.read}</p>`
+            <p>Read: <label class="switch">
+                <input type="checkbox" onclick="toggleRead()" checked>
+                <span class="slider"></span>
+            </label></p>`
+            :
+            card.innerHTML = 
+            `<p>Title: ${item.title}</p>
+            <p>Author: ${item.author}</p>
+            <p>Pages: ${item.pages}</p>
+            <p>Read: <label class="switch">
+                <input type="checkbox" onclick="toggleRead()">
+                <span class="slider"></span>
+            </label></p>`
         container.append(card);
     })
 }
@@ -58,6 +73,10 @@ function openForm() {
 
 function newBook() {
 
+}
+
+function toggleRead(e) {
+    document.querySelector()
 }
 
 populateLibrary();
