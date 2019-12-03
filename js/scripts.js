@@ -83,8 +83,8 @@ function toggleRead() {
 }
 
 function removeBook() {
-    let index = event.target.parentElement.parentElement.parentElement.getAttribute("data-key");
-    myLibrary.splice(index,1);
+    let index = event.target.parentElement.getAttribute("data-key");
+    myLibrary.splice(index, 1);
     render();
 }
 
