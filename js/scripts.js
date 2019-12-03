@@ -43,7 +43,8 @@ function render() {
         card.setAttribute('data-key', `${myLibrary.indexOf(item)}`)
         item.read == "true" ? 
             card.innerHTML = 
-            `<p>Title: ${item.title}</p>
+            `<button type="button" class="remove" onclick="removeBook()">X</button>
+            <p>Title: ${item.title}</p>
             <p>Author: ${item.author}</p>
             <p>Pages: ${item.pages}</p>
             <p>Read: <label class="switch">
@@ -52,7 +53,8 @@ function render() {
             </label></p>`
             :
             card.innerHTML = 
-            `<p>Title: ${item.title}</p>
+            `<button type="button" class="remove" onclick="removeBook()">X</button>
+            <p>Title: ${item.title}</p>
             <p>Author: ${item.author}</p>
             <p>Pages: ${item.pages}</p>
             <p>Read: <label class="switch">
@@ -75,8 +77,15 @@ function newBook() {
 
 }
 
-function toggleRead(e) {
-    document.querySelector()
+function toggleRead() {
+    let index = event.target.parentElement.parentElement.parentElement.getAttribute("data-key");
+    myLibrary[index]["read"] == "true" ? myLibrary[index]["read"] = "false" : myLibrary[index]["read"] = "true";
+}
+
+function removeBook() {
+    let index = event.target.parentElement.parentElement.parentElement.getAttribute("data-key");
+    myLibrary.splice(index,1);
+    render();
 }
 
 populateLibrary();

@@ -23,7 +23,17 @@ h1 {
     /* border: 1px solid #9e363a; */
     box-shadow: 2px 2px 8px #9e363a;
     margin: 3px;
-    padding: 1px 5px;
+    padding: 3px 5px;
+    height: 159px;
+    position: relative;
+}
+
+.remove {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    background-color: #9e363a;
+    border: none;
 }
 
 
@@ -103,11 +113,11 @@ h1 {
   }
 
   input:checked + .slider {
-      background-color: #2196F3;
+      background-color: #9e363a;
   }
 
   input:focus + .slider {
-      box-shadow: 0 0 1px #2196F3;
+      box-shadow: 0 0 1px #9e363a;
   }
 
   input:checked + .slider:before {
