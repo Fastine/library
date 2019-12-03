@@ -47,7 +47,7 @@ h1 {
 }
 
 .form-container {
-    max-width: 300px;
+    max-width: 325px;
     padding: 10px;
 }
 
@@ -62,6 +62,7 @@ h1 {
 }
 
 .form-container .btn {
+    color: rgba(256 ,256 ,256, 80%);
     background-color: #0f2862;
     border: none;
 }

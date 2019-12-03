@@ -1,4 +1,5 @@
 let myLibrary = [];
+let localLibrary = localStorage.getItem('myLibrary');
 
 function Book(title, author, pages, read) {
     this.title = title,
@@ -73,10 +74,6 @@ function openForm() {
     document.getElementById("newBookForm").style.display = "none";
 }
 
-function newBook() {
-
-}
-
 function toggleRead() {
     let index = event.target.parentElement.parentElement.parentElement.getAttribute("data-key");
     myLibrary[index]["read"] == "true" ? myLibrary[index]["read"] = "false" : myLibrary[index]["read"] = "true";
@@ -86,6 +83,10 @@ function removeBook() {
     let index = event.target.parentElement.getAttribute("data-key");
     myLibrary.splice(index, 1);
     render();
+}
+
+function storeLibrary() {
+
 }
 
 populateLibrary();
